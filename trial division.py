@@ -2,6 +2,10 @@ import numpy as np
 import time
 import matplotlib.pyplot as plt
 from retriever import retrieve
+
+## This program is designed to determine if a given number is prime or composite
+
+
 n = 4952019383323
 p = int((np.floor(np.sqrt(n))))
 i = 2

@@ -3,6 +3,8 @@ from sympy import *
 import numpy as np
 import matplotlib.pyplot as plt
 
+# This program is designed to show the distribtion of primes from 0 to 10000
+
 size = 10000
 
 x = np.arange(0,size,1)
