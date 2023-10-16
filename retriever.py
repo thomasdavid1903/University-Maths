@@ -2,6 +2,8 @@ import requests
 from bs4 import BeautifulSoup
 import numpy as np
 
+# A program used to fetch all the prime numbers off the website at the variable url
+
 def retrieve():# Define the URL with the start and stop parameters
     url = "https://t5k.org/curios/index.php?start=12&stop=15"
 
