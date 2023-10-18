@@ -1,7 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import pylatex
 
+#Implement in Python a class of right-continuous functions with a finite number of values. In general, such a l function is defined as follows
+# x_n = are the intervals and a_n is am array of the constant values between the interval
 
 def count_decimal_places(number):
     if isinstance(number, (int, float)):
