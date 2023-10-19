@@ -8,12 +8,12 @@ Retriever - one of my first website scrapping programs, just used to understand 
 Overall, this code defines a function retrieve that sends an HTTP request to a website, parses the HTML content, extracts prime numbers, and returns them as a list of integers. The prime numbers are identified by specific HTML elements on the web page with the class and title attributes set as specified in the code.
 
 
-Trialdivision - implementation of the simplest deterministic primality test
+Trial division - implementation of the simplest deterministic primality test
 
 n summary, the code attempts to find factors of the number n by iterating through potential divisors and prints whether n is prime or composite. It also measures the time taken for each factorization and creates a scatter plot of prime numbers against the time taken. The prime numbers used in this process are retrieved from an external source using the retrieve function.
 
 
-peicewise-continuous-functions -Implement in Python a class of right-continuous functions with a finite number of values. In general, such a l function is defined as follows
+piecewise-continuous-functions -Implement in Python a class of right-continuous functions with a finite number of values. In general, such a l function is defined as follows
 
 
 OOP-quadratic-functions - I used this to relearn object orientated programming, created an object called quadratic that has a few methods. 
