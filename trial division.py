@@ -11,8 +11,8 @@ p = int((np.floor(np.sqrt(n))))
 i = 2
 factor = False
 
-primes = np.array(retrieve())
-
+#primes = np.array(retrieve())
+primes=np.arange(1,100,1)
 
 times = [0]*len(primes)
 
@@ -37,5 +37,6 @@ for x in range(len(primes)):
     times[x] = end - start -0.1*x
 print(times)
 plt.scatter(primes,times)
+plt.xlim(0,primes[-1])
 print(primes)
 plt.show()
