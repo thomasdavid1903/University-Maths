@@ -1,5 +1,3 @@
-
-from improve_trial_divison import trial_division_factor
 from improve_trial_divison import trial_division
 #if this criterion is satisfied by an odd integer n then n is a Carmichael number, which is a pseudoprime for every base of fermats primality test
 
@@ -26,8 +24,9 @@ def korseltsCriterion(x):
                         divisibility = False
                         statement = "Not a carmichael number as n-1|p-1 where p is a prime factor of n"
                 if(divisibility == True):
-                    statement = "Number is carmichael number"
-    print(factors)
+                    print("Factors are " , str(factors]) )
+                    statement = str(x) + " is carmichael number"
+
     return statement
 
 def prime_factors(n):
