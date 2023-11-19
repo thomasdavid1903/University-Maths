@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
+
 from scipy import stats
 
 x = [3.4, 2, 5, 2.3, 3.1, 5.5, 1, 2.8, 2.4, 4.3, 2.1, 1.1, 6.1, 4.8, 3.8]
@@ -55,7 +56,7 @@ class slr():
     def RSquared(slr):
         a = slr.ahat()
         b = slr.bhat()
-        return (slr.sst(y, x, a, b) - slr.sse()) / slr.sst()
+        return (slr.sst() - slr.sse()) / slr.sst()
 
     def Ssquared(slr):
         a = slr.ahat()
@@ -75,7 +76,6 @@ class slr():
         plt.ylabel("$y_i$")
         plt.title("Scatter Plot")
         plt.legend()
-        plt.show()
 
     def plotFitted(slr):
         a = slr.ahat()
@@ -87,7 +87,6 @@ class slr():
         plt.ylabel("$y_i$")
         plt.title("Scatter Plot")
         plt.legend()
-        plt.show()
 
     def plotResiduals(slr):
         a = slr.ahat()
@@ -101,7 +100,6 @@ class slr():
         plt.legend()
         for i in range(0, len(x)):
             plt.plot([x[i], x[i]], [y[i], slr.f(x[i])], color="orange", linestyle="-.")
-        plt.show()
 
     def t(slr):
         a = slr.ahat()
@@ -110,7 +108,7 @@ class slr():
 
     def pvalue(slr, n, val):
         # val needs to be t obs
-        p = 2 * (1 - stats.t.cdf(val, n))
+        p = 2 * (1 - stats.t.cdf(val, n - 2))
         if (p > 0.05):
             print(f"We accept the null hypothesis as {round(p, 10)}>0.05")
         if (p <= 0.05):
@@ -124,13 +122,19 @@ class slr():
         slr.plotFitted()
         plt.subplot(1, 3, 3)
         slr.plotResiduals()
-        plt.show()
+
 
 graph1 = slr(y, x)
 print("The slope of the graph ", graph1.bhat())
+print("The $S_{xx}$ of the SLR : ", graph1.Sxx())
+print("The coefficient of determination, : ", graph1.RSquared())
+print("The $s^2$ of the SLR : ", graph1.Ssquared())
 print("The intercept of the graph ", graph1.ahat())
 print("f(1) =", graph1.f(1))
+print("The t value of SLR : ", graph1.t())
 print("The p value of the hypothesis test : ", graph1.pvalue(len(x), graph1.t()))
-print("The residuals of the graph is, ", np.round(graph1.ei(), decimals=3))
+print("Residuals ", np.round(graph1.ei(), decimals=2))
 # graph1.plotResiduals()
 graph1.plotAll()
+
+
